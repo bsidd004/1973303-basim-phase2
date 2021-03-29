@@ -19,7 +19,7 @@ export class QuizComponent implements OnInit {
     'allowBack': true,
     'allowReview': true,
     'autoMove': false,  
-    'duration': 300,  
+    'duration': 10000,  
     'pageSize': 1,
     'requiredAll': false,  
     'richText': false,
@@ -89,11 +89,11 @@ export class QuizComponent implements OnInit {
     }
 
     if (this.config.autoMove) {
-      this.goTo(this.pager.index + 1);
+      this.moveTo(this.pager.index + 1);
     }
   }
 
-  goTo(index: number) {
+  moveTo(index: number) {
     if (index >= 0 && index < this.pager.count) {
       this.pager.index = index;
       this.mode = 'quiz';
